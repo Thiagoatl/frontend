@@ -1,0 +1,15 @@
+.logo {
+    width: 70px; /* Defina o tamanho desejado para a largura da imagem */
+    height: 40px; /* Defina o tamanho desejado para a altura da imagem */
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* Outros estilos desejados */
+  }
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
