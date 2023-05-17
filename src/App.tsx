@@ -1,17 +1,28 @@
 import React from 'react';
+import './App.css';
 import Navbar from './components/estaticos/navbar/Navbar';
+import Footer from './components/estaticos/footer/Footer';
+import Home from './paginas/home/Home';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Contatos from './paginas/contatos/Contatos';
 
 function App() {
   return (
-<<<<<<< HEAD
-      <Navbar />
-  );
-=======
     <>
-      
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/contatos" element={<Contatos/>}/>
+        </Routes>
+
+        <Footer />
+      </BrowserRouter>
+
     </>
   )
->>>>>>> 5852ff9fbf2cd7ede2cdeee3d7aa5f639e0fe233
 }
 
-export default App;
+export default App
