@@ -1,0 +1,22 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 80vw;
+}
+
+.cards{
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-direction: row;
+}
+
+.paragrafo{
+    display: flex;
+    text-align:start;
+    margin: 1rem;
+    padding: 1rem;
+}
