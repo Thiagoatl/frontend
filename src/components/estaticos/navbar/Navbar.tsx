@@ -54,7 +54,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar position="static">
       <Container maxWidth="xl" style={{ width: '100%' }}>
         <Toolbar disableGutters>
           {!isMobile && (

@@ -4,7 +4,12 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+
+}
+
+.main{
     max-width: 80vw;
+    margin-bottom: 5rem;
 }
 
 .cards{
