@@ -1,0 +1,10 @@
+.footer{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+.genLink{
+    text-decoration: none;
+    color: white;
+}

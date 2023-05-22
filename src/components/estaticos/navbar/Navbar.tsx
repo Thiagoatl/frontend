@@ -32,7 +32,7 @@ const Logo = styled('img')(({ theme }) => ({
   },
 }));
 
-function ResponsiveAppBar() {
+function Navbar() {
   const isMobile = useMediaQuery('(max-width: 600px)');
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -135,7 +135,7 @@ function ResponsiveAppBar() {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: 'white',
                             textDecoration: 'none',
                         }}
                     >
@@ -187,4 +187,4 @@ function ResponsiveAppBar() {
         </AppBar>
     );
 }
-export default ResponsiveAppBar;
+export default Navbar;

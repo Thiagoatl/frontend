@@ -14,14 +14,15 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        <Routes>
+        <div style={{minHeight:'100vh'}}>
+        <Routes >
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/contatos" element={<Contatos />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cadastrousuario" element={<CadastroUsuario />} />
         </Routes>
-
+        </div>
         <Footer />
       </BrowserRouter>
 
