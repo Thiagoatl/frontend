@@ -1,9 +1,8 @@
-import Postagem from "./Postagem";
 
 interface Tema{
     id: number;
+    titulo:string;
     descricao: string;
-    postagens?: Postagem[];
 }
 
 export default Tema;

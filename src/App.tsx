@@ -31,9 +31,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/cadastrousuario" element={<CadastroUsuario />} />
           <Route path="/temas" element={<ListaTema />} />
-          <Route path="/formularioTema" element={<CadastroTema />} />
+          <Route path="/formulariotema" element={<CadastroTema />} />
           <Route path="/postagens" element={<ListaPostagem />} />
-          <Route path="/formularioPostagens" element={<CadastroPostagem />} />
+          <Route path="/formularioTema/:id" element={<CadastroTema />} />
+          <Route path="/formularioPostagem/:id" element={<CadastroPostagem />} />
+          <Route path="/formulariopostagens" element={<CadastroPostagem />} />
         </Routes>
         <Footer />
       </BrowserRouter>

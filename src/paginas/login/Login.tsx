@@ -21,9 +21,7 @@ function Login() {
     const [userLogin, setUserLogin] = useState<UserLogin>({
 
         id: 0,
-        nome: "",
         usuario: '',
-        foto: "",
         senha: '',
         token: ''
     })
@@ -31,9 +29,7 @@ function Login() {
     const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
 
         id: 0,
-        nome: "",
         usuario: '',
-        foto: "",
         senha: '',
         token: ''
     })

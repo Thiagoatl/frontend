@@ -1,12 +1,14 @@
-import { Button, Container, TextField, Typography } from "@material-ui/core";
-import { ChangeEvent, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, {useState, useEffect, ChangeEvent} from 'react'
+import { Container, Typography, TextField, Button } from "@material-ui/core"
+import {useNavigate, useParams } from 'react-router-dom'
+import './CadastroTema.css';
+import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../models/Tema';
 import { buscaId, post, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
-import './CadastroTema.css';
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
+
 
 function CadastroTema() {
     let navigate = useNavigate();
@@ -17,6 +19,7 @@ function CadastroTema() {
     )
     const [tema, setTema] = useState<Tema>({
         id: 0,
+        titulo: '',
         descricao: ''
     })
 
@@ -108,13 +111,15 @@ function CadastroTema() {
         function back() {
             navigate('/temas')
         }
+  
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
-                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="Titulo" variant="outlined" name="descricao" margin="normal" fullWidth />
+                <TextField value={tema.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
+                <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" color="primary">
-                {tema.id ? 'Atualizar' : 'Cadastrar'}
+                    Finalizar
                 </Button>
             </form>
         </Container>

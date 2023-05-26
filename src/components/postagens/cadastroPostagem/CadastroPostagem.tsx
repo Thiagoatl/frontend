@@ -44,6 +44,7 @@ function CadastroPostagem() {
     const [tema, setTema] = useState<Tema>(
         {
             id: 0,
+            titulo:'',
             descricao: ''
         })
 
@@ -80,7 +81,7 @@ function CadastroPostagem() {
     }, [id])
 
     async function getTemas() {
-        await busca('/temas', setTemas, {
+        await busca('/temas/all', setTemas, {
             headers: {
                 'Authorization': token
             }
@@ -174,7 +175,7 @@ function CadastroPostagem() {
     }
 
     function back() {
-        navigate('/posts')
+        navigate('/postagens')
     }
 
     return (
