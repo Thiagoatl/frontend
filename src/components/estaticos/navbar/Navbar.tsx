@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css'
 
+function navbar()
+
 const AppNavbar: React.FC = () => {
   return (
     <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: '#219EBC' }} variant="dark">
