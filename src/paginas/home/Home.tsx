@@ -1,12 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Home.css';
 import {Typography, Grid, Button} from '@material-ui/core';
 import {Box} from '@mui/material';
-
-
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import { UserState } from '../../store/token/Reducer';
+import { useNavigate } from 'react-router';
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 
 export default function Home() {
-    return (
+
+    let navigate = useNavigate();
+    // const [token, setToken] = useLocalStorage('token');
+
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    )
+    useEffect(() => {
+        if (token == "") {
+            // alert("Você precisa estar logado")
+            toast.error('Você precisa estar logado',{
+                position:"top-right",
+                autoClose:2000,
+                hideProgressBar:false,
+                closeOnClick:true,
+                pauseOnHover:true,
+                draggable:false,
+                theme:"colored",
+                progress:undefined
+            })
+            navigate("/login")
+
+        }
+    }, [token])
+    return ( 
         <>
          <Grid container direction="row" justifyContent="center" alignItems="center" className='bemVindo'>
                 <Grid alignItems="center" item xs={6}>
@@ -17,6 +44,7 @@ export default function Home() {
                     </Box>
                     <Box display="block" justifyContent="center">
                         <Box marginRight={1} marginTop={3}>
+                            <ModalPostagem /> 
                         </Box>
                         <Button variant="outlined" className='buttonPost' style={{ border: " 2px solid black", backgroundColor: "#0077B6", color: "white" }}>Ver Postagens</Button>
                     </Box>
